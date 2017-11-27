@@ -1,0 +1,4 @@
+rm printHexa/*.o
+rm printInt/*.o
+rm printOct/*.o
+rm printUnint/*.o

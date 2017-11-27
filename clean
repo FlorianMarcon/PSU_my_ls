@@ -1,0 +1,21 @@
+#! /bin/bash
+
+rm -f *.o
+rm -f *~
+rm -f *#
+
+rm -f src/*.o
+rm -f src/*~
+rm -f src/*#
+
+rm -f src/comparaison/*.o
+rm -f src/comparaison/*~
+rm -f src/comparaison/*#
+
+rm -f src/sort/*.o
+rm -f src/sort/*~
+rm -f src/sort/*#
+
+rm -f src/create/*.o
+rm -f src/create/*~
+rm -f src/create/*#
