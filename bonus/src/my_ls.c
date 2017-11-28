@@ -14,7 +14,7 @@
 void	my_ls(int ac, char **av)
 {
 	linked_list_t *list = create_list();
-	char *flags = determinate_param(ac, av);
 
-	display(list, flags);
+	list = sort_list_alpha(list);
+	display(list, ac, av);
 }

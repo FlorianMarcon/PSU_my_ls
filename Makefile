@@ -11,6 +11,14 @@ SRC	=	src/main.c		\
 		src/sort/sort.c			\
 		src/sort/init_new_list.c	\
 		src/comparaison/comparaison.c	\
+		src/display/display.c	\
+		src/flag/flag.c		\
+		src/type_file/type_file.c	\
+		src/type_file/right_file.c	\
+		src/determinate/determinate_right_type.c	\
+		src/determinate/determinate_time.c	\
+		src/determinate/determinate_iud_gid.c	\
+		src/concat_argu/concat_arguments.c	\
 
 OBJ	=	$(SRC:.c=.o)
 

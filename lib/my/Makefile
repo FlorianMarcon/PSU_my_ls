@@ -35,9 +35,6 @@ clean:
 	rm -f src_printf/*.o
 	rm -f src_printf/*~
 	rm -f src_printf/*#
-	rm -f convert_base/*.o
-	rm -f convert_base/*~
-	rm -f convert_base/*#
 	rm -f src_printf/printHexa/*.o
 	rm -f src_printf/printHexa/*~
 	rm -f src_printf/printHexa/*#
@@ -50,6 +47,9 @@ clean:
 	rm -f src_printf/printUnint/*.o
 	rm -f src_printf/printUnint/*~
 	rm -f src_printf/printUnint/*#
+	rm -f convert_base/*.o
+	rm -f convert_base/*#
+	rm -f convert_base/*~
 
 fclean: clean
 	rm -f libmy.a

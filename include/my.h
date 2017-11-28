@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2017
 ** my.h
 ** File description:
-** 
+**
 */
 #include <stdarg.h>
 
@@ -33,7 +33,7 @@ int	my_compute_power_rec(int nb, int power);		/*mettre un nombre nb a la puissan
 
 int	my_compute_square_root(int nb);			/*obtenir la racine carré d'un nombre seulement si sa racine est un entier*/
 
-int	my_is_prime(int nb);		
+int	my_is_prime(int nb);
 
 int	my_find_prime_sup(int nb);		/*trouver le nombre premier superieur le plus proche de nb*/
 
@@ -44,7 +44,6 @@ char	*my_strncpy(char *dest, char const *src, int n);		/*copier les n premiers c
 char	*my_revstr(char *str);		/*renverse la chaine str*/
 
 char	*my_strstr(char const *str, char const *to_find);
-
 
 int	my_strcmp(char const *s1, char const *s2);
 
@@ -64,7 +63,7 @@ int	my_char_isnum(char c);	/*verifie si un char est bien un chiffre*/
 
 int	my_str_isnum(char const *str);		/*verifie que chaque caractere soit des nombres*/
 
-int	my_str_islower(char const *str);		
+int	my_str_islower(char const *str);
 
 int	my_str_isupper(char const *str);
 
@@ -98,55 +97,55 @@ int	lenint(int nb);		/*nombre de digit d'unint*/
 
 int	len_unint(unsigned int);	/*nombre de digit d'un unsigned*/
 
-char    *stock_int_in_str(int nb); 	/*stock int sous forme de string*/
+char	*stock_int_in_str(int nb); 	/*stock int sous forme de string*/
 
 typedef struct linked_list
 {
-        void *data;
-        struct linked_list *next;
+	void *data;
+	struct linked_list *next;
 } linked_list_t;
 
-void    create_node(struct linked_list *tmp, void *dat);
+void	create_node(struct linked_list *tmp, void *dat);
 
-void    delete_node(struct linked_list *precedent);
+void	delete_node(struct linked_list *precedent);
 
-void    add_node(struct linked_list *precedent, struct linked_list *new);
+void	add_node(struct linked_list *precedent, struct linked_list *new);
 
-struct linked_list      *get_lastnode(struct linked_list *tmp);
+struct linked_list	*get_lastnode(struct linked_list *tmp);
 
-int     len_list(struct linked_list *tmp);
+int	len_list(struct linked_list *tmp);
 
-void    add_two_list(struct linked_list *first, struct linked_list *second);
+void	add_two_list(struct linked_list *first, struct linked_list *second);
 
-int    my_printf(char *str, ...);
+int	my_printf(char *str, ...);
 
 typedef struct tab {
-        char balise;
-        int (*fptr)(va_list, char *);
+	char balise;
+	int (*fptr)(va_list, char *);
 } tab_t;
 
 typedef struct specifier {
-        char balise;
-        int size;
+	char balise;
+	int size;
 } specifier_t;
 
 int	choice_function(va_list tmp, char *balise);
 
-int     find_speci(char *str);
+int	find_speci(char *str);
 
 void	use_speci(int speci, void *data);
 
-int     speci_printInt(char *str, int nb);
+int	speci_printInt(char *str, int nb);
 
-int     speci_printInt0(char *str, int nb);
+int	speci_printInt0(char *str, int nb);
 
-int     speci_printInt4(char *str, int nb);
+int	speci_printInt4(char *str, int nb);
 
-int     speci_printInt2(char *str);
+int	speci_printInt2(char *str);
 
-int     speci_printInt1(int nb);
+int	speci_printInt1(int nb);
 
-int     speci_printOct(char *str, char *string);
+int	speci_printOct(char *str, char *string);
 
 int	printOct_speci0(char *str, char *string);
 
@@ -156,7 +155,7 @@ int	printOct_speci2(char *str, char *string);
 
 int	printOct_speci4(char *str, char *string);
 
-int     speci_printHexa(char *str, char *string);
+int	speci_printHexa(char *str, char *string);
 
 int	printHexa_speci0(char *str, char *string);
 
@@ -166,9 +165,9 @@ int	printHexa_speci2(char *str, char *string);
 
 int	printHexa_speci4(char *str, char *string);
 
-int     speci_printHexa_maj(char *str, char *string);
+int	speci_printHexa_maj(char *str, char *string);
 
-int     speci_printUnint(char *str, unsigned int nb);
+int	speci_printUnint(char *str, unsigned int nb);
 
 int	printUnint_speci0(char *str, int nb);
 
@@ -194,7 +193,7 @@ int	printHexa_maj(va_list tmp, char *str);
 
 int	printUnint(va_list tmp, char *str);
 
-int     printAdresse(va_list tmp, char *str);
+int	printAdresse(va_list tmp, char *str);
 
 static tab_t const tab[13] = {{'c', printChar}, {'s', printStr}, {'d', printInt},
 				{'i', printInt}, {'b', printBinary}, {'o', printOct},
@@ -203,6 +202,5 @@ static tab_t const tab[13] = {{'c', printChar}, {'s', printStr}, {'d', printInt}
 				{'%', printInt}};
 
 static specifier_t const tab_speci[4] = {{'.', 1}, {'+', 1}, {' ', 1}, {'#', 1}};
-
 
 #endif
