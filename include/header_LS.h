@@ -18,6 +18,8 @@
 #ifndef LS
 #define LS
 
+void	reverse_list(linked_list_t **listt);
+
 linked_list_t	*create_list();
 
 linked_list_t	*sort_list_alpha(linked_list_t *list);
