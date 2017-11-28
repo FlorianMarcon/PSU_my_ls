@@ -20,12 +20,10 @@ void	display_time(linked_list_t *list)
 	char *hours;
 
 	month = &month[4];
-	month[3] = '.';
-	month[4] = '\0';
-	my_strlowcase(month);
-	my_printf("%s ", month);
+	month[3] = '\0';
+	my_printf("%s	", month);
 	hours = ctime(&heure);
 	hours = &hours[8];
 	hours[8] = '\0';
-	my_printf("%s ", hours);
+	my_printf("%s	", hours);
 }

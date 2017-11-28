@@ -17,9 +17,9 @@ void	display_all(linked_list_t *list)
 {
 	determinate_type(list);
 	determinate_right(list);
-	my_printf("%i ", ((info_t *)list->data)->stat->st_nlink);
+	my_printf("%i	", ((info_t *)list->data)->stat->st_nlink);
 	display_uid_gid(list);
-	my_printf("%i ", ((info_t *)list->data)->stat->st_size);
+	my_printf("%i	", ((info_t *)list->data)->stat->st_size);
 	display_time(list);
 	my_printf("%s\n", ((info_t *)list->data)->name);
 }
