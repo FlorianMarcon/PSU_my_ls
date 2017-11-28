@@ -24,7 +24,7 @@ void	reverse_list(linked_list_t **listt);
 
 linked_list_t	*flag_modify_list(linked_list_t *list, char *flags);
 
-linked_list_t	*create_list();
+linked_list_t	*create_list(char *path);
 
 linked_list_t	*sort_list_alpha(linked_list_t *list);
 

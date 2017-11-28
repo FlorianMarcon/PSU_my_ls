@@ -33,9 +33,9 @@ info_t	*create_info(struct dirent *tmp)
 	return (info);
 }
 
-linked_list_t	*create_list()
+linked_list_t	*create_list(char *path)
 {
-	DIR *dir = opendir(".");
+	DIR *dir = opendir(path);
 	struct dirent *tmp = readdir(dir);
 	linked_list_t *list = malloc(sizeof(linked_list_t));
 	info_t *info = create_info(tmp);

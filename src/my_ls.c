@@ -13,9 +13,23 @@
 
 void	my_ls(int ac, char **av)
 {
-	linked_list_t *list = create_list();
 	char *flags = determinate_param(ac, av);
+	linked_list_t *list = create_list(".");
+	int i = 1;
+	int compteur = 0;
 
-	list = flag_modify_list(list, flags);
-	display(list, flags);
+	while (i < ac){
+		if (av[i][0] != '-') {
+			list = create_list(av[i]);
+			list = flag_modify_list(list, flags);
+			display(list, flags);
+			compteur++;
+		}
+		i++;
+	}
+	if (compteur == 0) {
+		list = create_list(".");
+		list = flag_modify_list(list, flags);
+		display(list, flags);
+	}
 }
