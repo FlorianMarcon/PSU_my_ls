@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2017
-** header_LS
+** my_ls
 ** File description:
-**
+** header_LS
 */
 
 #include <sys/types.h>
@@ -18,7 +18,11 @@
 #ifndef LS
 #define LS
 
+void	sort_by_time(linked_list_t **listt);
+
 void	reverse_list(linked_list_t **listt);
+
+linked_list_t	*flag_modify_list(linked_list_t *list, char *flags);
 
 linked_list_t	*create_list();
 

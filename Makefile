@@ -11,9 +11,11 @@ SRC	=	src/main.c		\
 		src/sort/sort.c			\
 		src/sort/init_new_list.c	\
 		src/sort/reverse_list.c		\
+		src/sort/sort_by_time.c		\
 		src/comparaison/comparaison.c	\
 		src/display/display.c	\
 		src/flag/flag.c		\
+		src/flag/flag_modify_list.c	\
 		src/type_file/type_file.c	\
 		src/type_file/right_file.c	\
 		src/determinate/determinate_right_type.c	\
