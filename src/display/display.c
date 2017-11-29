@@ -9,38 +9,24 @@
 #include "header_LS.h"
 #include <stdio.h>
 
-void	display_link(linked_list_t *list)
-{
-	int len = lenint(((info_t *)list->data)->stat->st_nlink);
+void	display_link(linked_list_t *list);
 
-	while (len != 2) {
-		my_printf(" ");
-		len++;
-	}
-	my_printf("%i ", ((info_t *)list->data)->stat->st_nlink);
-}
-
-void	display_size(linked_list_t *list)
-{
-	int len = lenint((((info_t *)list->data)->stat->st_size));
-
-	while (len != 6) {
-		my_printf(" ");
-		len++;
-	}
-	my_printf("%i ", ((info_t *)list->data)->stat->st_size);
-
-}
+void	display_size(linked_list_t *list);
 
 int	check_argu(linked_list_t *list, char *flags)
 {
 	int i = 1;
 	int len = my_strlen(flags);
+	int a = 0;
 
 	while (i < len) {
-		if (flags[i] == flaga.balise) {
-			flaga.fptr(list);
-			return (0);
+		a = 0;
+		while (a < 2) {
+			if (flags[i] == flaga[a].balise) {
+				flaga[a].fptr(list);
+				return (0);
+			}
+		a++;
 		}
 		i++;
 	}

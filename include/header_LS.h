@@ -18,6 +18,8 @@
 #ifndef LS
 #define LS
 
+void	display_recursive(linked_list_t *list);
+
 void	display_one_folder(char *flags);
 
 void	display_link(linked_list_t *list);
@@ -84,7 +86,7 @@ typedef struct right {
 	char *balise;
 }right_t;
 
-static argu_t const flaga = {'l', display_all};//, {"-lR\0"}, {"-R\0"}};
+static argu_t const flaga[2] = {{'l', display_all}, {'R', display_recursive}};//, {"-lR\0"}, {"-R\0"}};
 
 static typ_t const typ[3] = {{'-', regular_file}, {'d', directory_file}, {'c', char_file}};
 

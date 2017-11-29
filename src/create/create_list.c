@@ -33,10 +33,8 @@ info_t	*create_info(struct dirent *tmp)
 	return (info);
 }
 
-linked_list_t	*create_list(char *path)
+linked_list_t	*build_list(struct dirent *tmp, DIR *dir)
 {
-	DIR *dir = opendir(path);
-	struct dirent *tmp = readdir(dir);
 	linked_list_t *list = malloc(sizeof(linked_list_t));
 	info_t *info = create_info(tmp);
 
@@ -49,5 +47,33 @@ linked_list_t	*create_list(char *path)
 		}
 		tmp = readdir(dir);
 	}
+	return (list);
+}
+
+linked_list_t	*build_list_courant(struct dirent *tmp, DIR *dir)
+{
+	linked_list_t *list = malloc(sizeof(linked_list_t));
+	info_t *info = create_info(tmp);
+
+	list = init_list(list, info);
+	tmp = readdir(dir);
+	my_printf("SUCCED");
+	while (tmp != NULL) {
+		if (tmp->d_name[0] == '.') {
+			info = create_info(tmp);
+			create_node(list, (void *)info);
+		}
+		tmp = readdir(dir);
+	}
+	return (list);
+}
+
+linked_list_t	*create_list(char *path)
+{
+	DIR *dir = opendir(path);
+	struct dirent *tmp = readdir(dir);
+	linked_list_t *list = NULL;
+
+	list = build_list(tmp, dir);
 	return (list);
 }
