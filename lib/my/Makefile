@@ -2,7 +2,7 @@
 ## EPITECH PROJECT, 2017
 ## Makefile pour compresser lib
 ## File description:
-##
+## Makefile
 ##
 
 SRC	=	$(wildcard *.c)		\

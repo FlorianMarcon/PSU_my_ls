@@ -11,7 +11,7 @@
 #include "my.h"
 
 void	my_put_pixel(framebuffer_t *buffer,
-			 unsigned int x, unsigned int y, sfColor color)
+		unsigned int x, unsigned int y, sfColor color)
 {
 	unsigned int var = (x + y * buffer->width) * 4;
 

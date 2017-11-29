@@ -91,7 +91,7 @@ int	my_show_word_array(char * const *tab);
 
 char	**my_str_to_word_array(char const *str);
 
-char	**mise_en_tableau(char const *str, int nb_separateur);
+char	**stock_in_tab(char const *str, int nb_separateur);
 
 int	separateur(char const *str);
 
@@ -105,8 +105,8 @@ char    *stock_int_in_str(int nb); 	/*stock int sous forme de string*/
 
 typedef struct linked_list
 {
-        void *data;
-        struct linked_list *next;
+	void *data;
+	struct linked_list *next;
 } linked_list_t;
 
 void    create_node(struct linked_list *tmp, void *dat);
@@ -124,13 +124,13 @@ void    add_two_list(struct linked_list *first, struct linked_list *second);
 int    my_printf(char *str, ...);
 
 typedef struct tab {
-        char balise;
-        int (*fptr)(va_list, char *);
+	char balise;
+	int (*fptr)(va_list, char *);
 } tab_t;
 
 typedef struct specifier {
-        char balise;
-        int size;
+	char balise;
+	int size;
 } specifier_t;
 
 int	choice_function(va_list tmp, char *balise);
@@ -212,9 +212,9 @@ static specifier_t const tab_speci[4] = {{'.', 1}, {'+', 1}, {' ', 1}, {'#', 1}}
 //GRAPHIQUE
 
 struct framebuffer {
-        unsigned int width;
-        unsigned int height;
-        sfUint8 *pixels;
+	unsigned int width;
+	unsigned int height;
+	sfUint8 *pixels;
 };
 
 typedef struct framebuffer framebuffer_t;
@@ -222,6 +222,5 @@ typedef struct framebuffer framebuffer_t;
 void	my_put_pixel(framebuffer_t *buffer, unsigned int x, unsigned int y, sfColor color);
 
 framebuffer_t *framebuffer_create(unsigned int width, unsigned int height);
-
 
 #endif

@@ -10,7 +10,7 @@
 
 void	my_ls();
 
-int	main()
+int	main(void)
 {
 	my_ls();
 	return (0);

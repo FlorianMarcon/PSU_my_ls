@@ -16,14 +16,13 @@ int	my_strlen(char const *str);
 char	*my_revstr(char *str)
 {
 	char variable;
-	int i;
 	int a_start;
 	int a;
 
 	a = my_strlen(str);
 	a_start = a;
 	a--;
-	for (i = 0; i != a_start/2; i++){
+	for (int i = 0; i != a_start / 2; i++){
 		variable = str[i];
 		str[i] = str[a];
 		str[a] = variable;
