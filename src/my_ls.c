@@ -20,9 +20,11 @@ void	my_ls(int ac, char **av)
 
 	while (i < ac){
 		if (av[i][0] != '-') {
-			list = create_list(av[i]);
-			list = sort_list_alpha(list);
-			list = flag_modify_list(list, flags);
+			list = create_list(av[i], flags);
+			if (check_flag_d(flags) == 0) {
+				list = sort_list_alpha(list);
+				list = flag_modify_list(list, flags);
+			}
 			display(list, flags);
 			compteur++;
 		}

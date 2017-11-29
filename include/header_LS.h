@@ -18,6 +18,8 @@
 #ifndef LS
 #define LS
 
+int	check_flag_d(char *flags);
+
 void	display_recursive(linked_list_t *list);
 
 void	display_one_folder(char *flags);
@@ -34,7 +36,7 @@ void	reverse_list(linked_list_t **listt);
 
 linked_list_t	*flag_modify_list(linked_list_t *list, char *flags);
 
-linked_list_t	*create_list(char *path);
+linked_list_t	*create_list(char *path, char *flags);
 
 linked_list_t	*sort_list_alpha(linked_list_t *list);
 

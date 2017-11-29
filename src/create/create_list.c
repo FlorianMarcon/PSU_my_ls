@@ -53,27 +53,30 @@ linked_list_t	*build_list(struct dirent *tmp, DIR *dir)
 linked_list_t	*build_list_courant(struct dirent *tmp, DIR *dir)
 {
 	linked_list_t *list = malloc(sizeof(linked_list_t));
-	info_t *info = create_info(tmp);
+	info_t *info = NULL;
 
-	list = init_list(list, info);
 	tmp = readdir(dir);
-	my_printf("SUCCED");
-	while (tmp != NULL) {
-		if (tmp->d_name[0] == '.') {
-			info = create_info(tmp);
-			create_node(list, (void *)info);
-		}
+	while (my_strcmp(tmp->d_name, ".") != 0)
 		tmp = readdir(dir);
-	}
+	info = create_info(tmp);
+	list = init_list(list, info);
 	return (list);
 }
 
-linked_list_t	*create_list(char *path)
+linked_list_t	*create_list(char *path, char *flags)
 {
 	DIR *dir = opendir(path);
 	struct dirent *tmp = readdir(dir);
 	linked_list_t *list = NULL;
+	int i  = 0;
 
+	while (flags[i] != '\0') {
+		if (flags[i] == 'd') {
+			list = build_list_courant(tmp, dir);
+			return (list);
+		}
+		i++;
+	}
 	list = build_list(tmp, dir);
 	return (list);
 }

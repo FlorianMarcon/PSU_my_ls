@@ -22,6 +22,7 @@ SRC	=	src/main.c		\
 		src/display/display_recursive.c		\
 		src/flag/flag.c		\
 		src/flag/flag_modify_list.c	\
+		src/flag/check_flag_d.c		\
 		src/type_file/type_file.c	\
 		src/type_file/right_file.c	\
 		src/determinate/determinate_right_type.c	\

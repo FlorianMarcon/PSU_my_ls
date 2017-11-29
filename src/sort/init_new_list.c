@@ -11,8 +11,10 @@
 
 linked_list_t	*search_point(linked_list_t *list)
 {
-	linked_list_t *buffer;
+	linked_list_t *buffer = NULL;
 
+	if (my_strcmp(((info_t *)list->data)->name, ".") == 0)
+		return (list);
 	buffer = list;
 	list = list->next;
 	while (list != NULL){

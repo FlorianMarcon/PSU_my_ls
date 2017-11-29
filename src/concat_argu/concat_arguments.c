@@ -34,9 +34,10 @@ char	*concat_param(char *str1, char *str2)
 char	*determinate_param(int ac, char **av)
 {
 	int i = 1;
-	char *result = malloc(sizeof(char));
+	char *result = malloc(sizeof(char) * 2);
 
 	result[0] = '-';
+	result[1] = '\0';
 	while (i != ac) {
 		if (av[i][0] == '-') {
 			result = concat_param(result, av[i]);
