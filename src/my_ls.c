@@ -14,13 +14,14 @@
 void	my_ls(int ac, char **av)
 {
 	char *flags = determinate_param(ac, av);
-	linked_list_t *list = create_list(".");
+	linked_list_t *list = NULL;
 	int i = 1;
 	int compteur = 0;
 
 	while (i < ac){
 		if (av[i][0] != '-') {
 			list = create_list(av[i]);
+			list = sort_list_alpha(list);
 			list = flag_modify_list(list, flags);
 			display(list, flags);
 			compteur++;
@@ -28,8 +29,6 @@ void	my_ls(int ac, char **av)
 		i++;
 	}
 	if (compteur == 0) {
-		list = create_list(".");
-		list = flag_modify_list(list, flags);
-		display(list, flags);
+		display_one_folder(flags);
 	}
 }

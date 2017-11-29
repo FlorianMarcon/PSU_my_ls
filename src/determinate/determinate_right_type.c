@@ -19,7 +19,7 @@ void	determinate_type(linked_list_t *list)
 
 	while (i < 3) {
 		if (typ[i].fptr(list) == 1)
-			my_printf("%c", typ[i].balise);
+			my_printf(" %c", typ[i].balise);
 		i++;
 	}
 }

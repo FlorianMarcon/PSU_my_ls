@@ -18,6 +18,14 @@
 #ifndef LS
 #define LS
 
+void	display_one_folder(char *flags);
+
+void	display_link(linked_list_t *list);
+
+void	display_size(linked_list_t *list);
+
+void	display_total(linked_list_t *list);
+
 void	sort_by_time(linked_list_t **listt);
 
 void	reverse_list(linked_list_t **listt);

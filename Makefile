@@ -14,6 +14,7 @@ SRC	=	src/main.c		\
 		src/sort/sort_by_time.c		\
 		src/comparaison/comparaison.c	\
 		src/display/display.c	\
+		src/display/display_one_folder.c	\
 		src/flag/flag.c		\
 		src/flag/flag_modify_list.c	\
 		src/type_file/type_file.c	\
