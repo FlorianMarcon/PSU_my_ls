@@ -13,7 +13,7 @@
 
 void	display_one_folder(char *flags)
 {
-	linked_list_t *list = create_list(".", flags);
+	linked_list_t *list = create_list("./", flags);
 
 	if (check_flag_d(flags) == 0) {
 		list = sort_list_alpha(list);

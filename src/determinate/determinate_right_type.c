@@ -17,7 +17,7 @@ void	determinate_type(linked_list_t *list)
 {
 	int i = 0;
 
-	while (i < 3) {
+	while (i < 4) {
 		if (typ[i].fptr(list) == 1)
 			my_printf("%c", typ[i].balise);
 		i++;

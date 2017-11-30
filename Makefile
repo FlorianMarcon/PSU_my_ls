@@ -24,13 +24,15 @@ SRC	=	src/main.c		\
 		src/display/display_recursive.c		\
 		src/flag/flag.c		\
 		src/flag/flag_modify_list.c	\
-		src/flag/check_flag_d.c		\
 		src/type_file/type_file.c	\
 		src/type_file/right_file.c	\
 		src/determinate/determinate_right_type.c	\
 		src/determinate/determinate_time.c	\
 		src/determinate/determinate_iud_gid.c	\
 		src/concat_argu/concat_arguments.c	\
+		src/check/check_flag_l.c	\
+		src/check/check_flag_d.c		\
+		src/check/check_path.c		\
 
 OBJ	=	$(SRC:.c=.o)
 

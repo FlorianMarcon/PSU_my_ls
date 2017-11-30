@@ -36,13 +36,8 @@ int	check_argu(linked_list_t *list, char *flags)
 
 void	display(linked_list_t *list, char *flags)
 {
-	int i = 0;
-
-	while (flags[i] != '\0') {
-		if (flags[i] == 'l')
-			display_total(list);
-		i++;
-	}
+	if (check_flag_l(flags) == 1)
+		display_total(list);
 	while (list != NULL) {
 		check_argu(list, flags);
 		list = list->next;

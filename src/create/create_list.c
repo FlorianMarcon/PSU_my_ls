@@ -21,28 +21,29 @@ linked_list_t	*init_list(linked_list_t *list, info_t *info)
 	return (list);
 }
 
-info_t	*create_info(struct dirent *tmp)
+info_t	*create_info(struct dirent *tmp, char *path)
 {
 	info_t *info = malloc(sizeof(info_t));
 	struct stat *buffer = malloc(sizeof(struct stat));
+	char *name = my_strcat(path, tmp->d_name);
 
 	info->name = malloc(sizeof(char) * (my_strlen(tmp->d_name) + 1));
 	my_strcpy(info->name, tmp->d_name);
-	lstat(info->name, buffer);
+	lstat(name, buffer);
 	info->stat = buffer;
 	return (info);
 }
 
-linked_list_t	*build_list(struct dirent *tmp, DIR *dir)
+linked_list_t	*build_list(struct dirent *tmp, DIR *dir, char *path)
 {
 	linked_list_t *list = malloc(sizeof(linked_list_t));
-	info_t *info = create_info(tmp);
+	info_t *info = create_info(tmp, path);
 
 	list = init_list(list, info);
 	tmp = readdir(dir);
 	while (tmp != NULL) {
 		if (tmp->d_name[0] != '.') {
-			info = create_info(tmp);
+			info = create_info(tmp, path);
 			create_node(list, (void *)info);
 		}
 		tmp = readdir(dir);
@@ -50,7 +51,7 @@ linked_list_t	*build_list(struct dirent *tmp, DIR *dir)
 	return (list);
 }
 
-linked_list_t	*build_list_courant(struct dirent *tmp, DIR *dir)
+linked_list_t	*build_list_courant(struct dirent *tmp, DIR *dir, char *path)
 {
 	linked_list_t *list = malloc(sizeof(linked_list_t));
 	info_t *info = NULL;
@@ -58,7 +59,7 @@ linked_list_t	*build_list_courant(struct dirent *tmp, DIR *dir)
 	tmp = readdir(dir);
 	while (my_strcmp(tmp->d_name, ".") != 0)
 		tmp = readdir(dir);
-	info = create_info(tmp);
+	info = create_info(tmp, path);
 	list = init_list(list, info);
 	return (list);
 }
@@ -68,15 +69,12 @@ linked_list_t	*create_list(char *path, char *flags)
 	DIR *dir = opendir(path);
 	struct dirent *tmp = readdir(dir);
 	linked_list_t *list = NULL;
-	int i  = 0;
 
-	while (flags[i] != '\0') {
-		if (flags[i] == 'd') {
-			list = build_list_courant(tmp, dir);
-			return (list);
-		}
-		i++;
+	path = check_path(path);
+	if (check_flag_d(flags) == 1) {
+		list = build_list_courant(tmp, dir, path);
+		return (list);
 	}
-	list = build_list(tmp, dir);
+	list = build_list(tmp, dir, path);
 	return (list);
 }

@@ -18,7 +18,11 @@
 #ifndef LS
 #define LS
 
+char	*check_path(char *start);
+
 int	check_flag_d(char *flags);
+
+int	check_flag_l(char *flags);
 
 void	display_recursive(linked_list_t *list);
 
@@ -64,6 +68,8 @@ int	directory_file(linked_list_t *list);
 
 int	char_file(linked_list_t *list);
 
+int	link_file(linked_list_t *list);
+
 char	*determinate_param(int ac, char **av);
 
 void	determinate_right(linked_list_t *list);
@@ -90,7 +96,8 @@ typedef struct right {
 
 static argu_t const flaga[2] = {{'l', display_all}, {'R', display_recursive}};//, {"-lR\0"}, {"-R\0"}};
 
-static typ_t const typ[3] = {{'-', regular_file}, {'d', directory_file}, {'c', char_file}};
+static typ_t const typ[4] = {{'-', regular_file}, {'d', directory_file},
+			{'c', char_file}, {'l', link_file}};
 
 static right_t const tab_right[8] = {{0, "---\0"}, {1, "--r\0"}, {2, "-w-\0"},
 				{3, "-wx\0"}, {4, "r--\0"}, {5, "r-x\0"},

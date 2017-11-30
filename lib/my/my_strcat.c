@@ -6,20 +6,28 @@
 */
 
 #include <string.h>
+#include <stdlib.h>
 
 int	my_strlen(char const *str);
 
 char	*my_strcat(char *dest, char const *src)
 {
-	int n;
+	int len = my_strlen(dest) + my_strlen(src) + 1;
+	char *resultat = NULL;
 	int i = 0;
 
-	n = my_strlen(dest);
+	if ((resultat = malloc(sizeof(char) * len)) == NULL)
+		return (NULL);
+	len = 0;
+	while (dest[len] != '\0') {
+		resultat[len] = dest[len];
+		len++;
+	}
 	while (src[i] != '\0') {
-		dest[n + i] = src[i];
+		resultat[len] = src[i];
+		len++;
 		i++;
 	}
-	dest[n + i] = '\0';
-	return (dest);
-
+	resultat[len] = '\0';
+	return (resultat);
 }

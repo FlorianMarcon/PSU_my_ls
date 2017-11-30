@@ -33,3 +33,10 @@ int	char_file(linked_list_t *list)
 
 	return (result);
 }
+
+int	link_file(linked_list_t *list)
+{
+	int result = S_ISLNK(((info_t *)list->data)->stat->st_mode);
+
+	return (result);
+}
