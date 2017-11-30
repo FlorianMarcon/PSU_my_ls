@@ -6,6 +6,7 @@
 */
 
 #include <stdarg.h>
+#include "my_printf.h"
 
 #ifndef MY_
 #define MY_
