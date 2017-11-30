@@ -8,6 +8,7 @@
 #include "my.h"
 #include <stdarg.h>
 #include <stdio.h>
+#include "my_printf.h"
 
 int	my_printf(char *str, ...)
 {

@@ -9,6 +9,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include "my_printf.h"
 
 int	print_Soctal(char c)
 {

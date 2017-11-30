@@ -9,6 +9,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include "my_printf.h"
 
 int	printBinary(va_list tmp, char *str)
 {

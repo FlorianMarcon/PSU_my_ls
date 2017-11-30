@@ -5,6 +5,8 @@
 ## Makefile
 ##
 
+CC	=	gcc
+
 SRC	=	$(wildcard *.c)		\
 		src_printf/printInt/print_int_speci.c	\
 		src_printf/printOct/print_oct_speci.c	\
@@ -22,7 +24,7 @@ SRC	=	$(wildcard *.c)		\
 
 OBJ	=	$(SRC:.c=.o)
 
-CFLAGS	=	-I. -W -Wall -Wextra -Werror
+CFLAGS	=	-I../../include -W -Wall -Wextra -Werror
 
 all:		$(OBJ)
 	ar rc libmy.a $(OBJ)

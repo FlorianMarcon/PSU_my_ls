@@ -6,6 +6,7 @@
 */
 
 #include "my.h"
+#include "my_printf.h"
 
 int	speci_printInt(char *str, int nb)
 {

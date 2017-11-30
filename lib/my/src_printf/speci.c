@@ -8,6 +8,7 @@
 #include "my.h"
 #include <stdarg.h>
 #include <stdlib.h>
+#include "my_printf.h"
 
 int	find_speci(char *str)
 {

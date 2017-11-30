@@ -6,6 +6,7 @@
 */
 
 #include "my.h"
+#include "my_printf.h"
 
 int	printOct_speci0(char *str, char *string)
 {
