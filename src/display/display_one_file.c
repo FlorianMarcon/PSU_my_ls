@@ -25,8 +25,10 @@ char	**find_path(char *str)
 	if (tmp >= 0) {
 		str[tmp] = '\0';
 		result[0] = str;
-	} else
-		result[0] = NULL;
+	} else {
+		result[0] = malloc(sizeof(char) * 3);
+		my_strcpy(result[0], "./\0");
+	}
 	str = &str[tmp + 1];
 	result[1] = str;
 	return (result);
