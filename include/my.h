@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2017
 ** my.h
 ** File description:
-**
+** header my.h
 */
 
 #include <stdarg.h>

@@ -45,17 +45,17 @@ char	*base_10(char const *nbr, int base)
 	char *final;
 
 	while (a >= 0) {
-		total = total + (chiffre(nbr[i]) * (my_compute_power_rec(base, a)));
+		total = total + (chiffre(nbr[i])
+		* (my_compute_power_rec(base, a)));
 		a--;
 		i++;
 	}
 	i = how_chiffre(total);
 	final = malloc(sizeof(char) * (i + 1));
 	i--;
-	while (i >= 0) {
+	for (--i; i >= 0; i--) {
 		final[i] = (total % 10) + 48;
 		total = (total - (total % 10)) /10;
-		i--;
 	}
 	final[i] = '\0';
 	return (final);

@@ -9,13 +9,13 @@
 
 int	my_isneg (int n)
 {
-	char P = 80;
-	char N = 78;
+	char p = 80;
+	char n = 78;
 
 	if (n >= 0)
-		my_putchar(P);
+		my_putchar(p);
 	else
-		my_putchar(N);
+		my_putchar(n);
 	my_putchar('\n');
 	return (0);
 }
