@@ -25,7 +25,6 @@ int	display_in_folder(char *str, char *flags)
 	return (1);
 }
 
-
 int	multi_path(int ac, char **av)
 {
 	char *flags = determinate_param(ac, av);
@@ -34,11 +33,13 @@ int	multi_path(int ac, char **av)
 	DIR *dir = NULL;
 
 	while (i < ac){
-		if (av[i][0] != '-')
+		if (av[i][0] != '-') {
 			if ((dir = opendir(av[i])) != NULL) {
 				compteur += display_in_folder(av[i], flags);
 			}
-			//CREER ICI FCT QUI AFFICHE SEULEMENT FILE
+			else
+				compteur += display_one_file(av[i], flags);
+		 }
 		i++;
 	}
 	return (compteur);

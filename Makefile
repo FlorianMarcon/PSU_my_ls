@@ -22,6 +22,7 @@ SRC	=	src/main.c		\
 		src/display/display_one_folder.c	\
 		src/display/display_link_size.c		\
 		src/display/display_recursive.c		\
+		src/display/display_one_file.c		\
 		src/flag/flag.c		\
 		src/flag/flag_modify_list.c	\
 		src/type_file/type_file.c	\

@@ -18,6 +18,8 @@
 #ifndef LS
 #define LS
 
+int	display_one_file(char *str, char *flags);
+
 char	*check_path(char *start);
 
 int	check_flag_d(char *flags);

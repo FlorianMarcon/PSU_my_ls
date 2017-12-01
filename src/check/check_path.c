@@ -16,10 +16,10 @@ char	*check_path(char *start)
 
 	if (start[len - 1] == '/')
 		return (start);
-	if ((malloc(sizeof(char) * len + 2)) == NULL)
-		return (NULL);
+	if ((final = malloc(sizeof(char) * (len + 2))) == NULL)
+		exit (84);
 	my_strcpy(final, start);
-	start[len] = '/';
-	start[len + 1] = '\0';
-	return (start);
+	final[len] = '/';
+	final[len + 1] = '\0';
+	return (final);
 }
