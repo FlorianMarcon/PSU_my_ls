@@ -7,12 +7,12 @@
 
 #include "my.h"
 
-int	my_isneg (int n)
+int	my_isneg (int nb)
 {
 	char p = 80;
 	char n = 78;
 
-	if (n >= 0)
+	if (nb >= 0)
 		my_putchar(p);
 	else
 		my_putchar(n);
