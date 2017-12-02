@@ -14,8 +14,9 @@ char	*concat_param(char *str1, char *str2)
 	char *new = NULL;
 	int i = 0;
 	int a = 0;
+	int len = my_strlen(str1) + my_strlen(str2) + 1;
 
-	new = malloc(sizeof(char) * (my_strlen(str1) + my_strlen(str2) + 1));
+	new = malloc(sizeof(char) * len);
 	my_strcpy(new, str1);
 	while (new[i] != '\0')
 		i++;

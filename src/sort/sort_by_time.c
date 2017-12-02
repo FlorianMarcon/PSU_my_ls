@@ -24,6 +24,7 @@ linked_list_t	*search_greater_time(linked_list_t *list)
 	}
 	return (buffer);
 }
+
 void	init_new(linked_list_t **neww, linked_list_t **listt)
 {
 	linked_list_t *list = *listt;
@@ -45,7 +46,7 @@ void	init_new(linked_list_t **neww, linked_list_t **listt)
 }
 
 void	add_in_new(linked_list_t **listt, linked_list_t *new,
-		 linked_list_t *buffer)
+		linked_list_t *buffer)
 {
 	linked_list_t *list = *listt;
 

@@ -22,6 +22,7 @@ char	*delete_point(char *str)
 		str = &str[1];
 	return (str);
 }
+
 int	compare_str(char *str1, char *str2)
 {
 	int i = 0;

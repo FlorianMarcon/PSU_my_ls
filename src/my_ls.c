@@ -44,6 +44,7 @@ int	multi_path(int ac, char **av)
 	}
 	return (compteur);
 }
+
 void	my_ls(int ac, char **av)
 {
 	char *flags = determinate_param(ac, av);

@@ -15,8 +15,10 @@
 
 void	display_uid_gid(linked_list_t *list)
 {
-	struct passwd *info_uid = getpwuid(((info_t *)list->data)->stat->st_uid);
-	struct group *info_gid = getgrgid(((info_t *)list->data)->stat->st_gid);
+	uid_t uid = ((info_t *)list->data)->stat->st_uid;
+	gid_t gid = ((info_t *)list->data)->stat->st_gid;
+	struct passwd *info_uid = getpwuid(uid);
+	struct group *info_gid = getgrgid(gid);
 
 	my_printf("%s ", info_uid->pw_name);
 	my_printf("%s ", info_gid->gr_name);

@@ -26,8 +26,6 @@ int	check_flag_d(char *flags);
 
 int	check_flag_l(char *flags);
 
-void	display_recursive(linked_list_t *list);
-
 void	display_one_folder(char *flags);
 
 void	display_link(linked_list_t *list);
@@ -96,7 +94,7 @@ typedef struct right {
 	char *balise;
 }right_t;
 
-static argu_t const flaga[2] = {{'l', display_all}, {'R', display_recursive}};//, {"-lR\0"}, {"-R\0"}};
+static argu_t const flaga = {'l', display_all};
 
 static typ_t const typ[4] = {{'-', regular_file}, {'d', directory_file},
 			{'c', char_file}, {'l', link_file}};
@@ -104,4 +102,5 @@ static typ_t const typ[4] = {{'-', regular_file}, {'d', directory_file},
 static right_t const tab_right[8] = {{0, "---\0"}, {1, "--r\0"}, {2, "-w-\0"},
 				{3, "-wx\0"}, {4, "r--\0"}, {5, "r-x\0"},
 				{6, "rw-\0"}, {7, "rwx\0"}};
+
 #endif

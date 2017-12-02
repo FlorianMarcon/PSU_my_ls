@@ -43,6 +43,7 @@ void	determinate_right_group(linked_list_t *list)
 		i++;
 	}
 }
+
 void	determinate_right(linked_list_t *list)
 {
 	struct stat *file_stat = ((info_t *)list->data)->stat;

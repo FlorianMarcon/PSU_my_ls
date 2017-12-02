@@ -24,6 +24,7 @@ void	display_total(linked_list_t *list)
 	total = total / 2;
 	my_printf("total %i\n\0", total);
 }
+
 void	display_all(linked_list_t *list)
 {
 	determinate_type(list);
